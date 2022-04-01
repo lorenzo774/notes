@@ -1,25 +1,46 @@
 <script lang="ts">
+	// Imports
 	import type { INote } from './scripts/interfaces';
 	import Note from './components/Note.svelte';
 	import NoteForm from './components/NoteForm.svelte';
 	
+	// Variables
 	let index = 0;
 	let notes: INote[] = [];
 	let opened: boolean;
 	let newNote: INote;
 
-	const closeForm = function(): void {
+	// Helper
+	const getNoteIndex = function(id: number): number {
+		return notes.findIndex(n => n.id === id);
+	};
+
+	const closeForm = function() {
 		opened = false;
 		newNote = { id: index, title: "", description: ""};
 	}
 
-	const removeNote = function(e): void {
-		const index = notes.findIndex(n => e.detail.id == n.id);
+	// CRUD
+	const removeNote = function(e) {
+		const index = getNoteIndex(e.detail.id);
 		notes.splice(index, 1);
 		notes = notes;
 	}
 
-	const addNote = function(): void {
+	const editNote = function(e) {
+		const newData = e.detail.newData;
+		const index = getNoteIndex(e.detail.id);
+		const oldNote = notes[index];
+
+		const newNote: INote = {
+			id: oldNote.id,
+			...newData
+		}
+
+		notes[index] = newNote;		
+	}
+
+	const addNote = function() {
 		notes = [ ...notes, {...newNote}];
 		index++;
 		newNote = { id: index, title: "", description: ""};
@@ -42,7 +63,11 @@
 	<br>
 	<div class="list-group container w-50">
 		{#each notes as note}
-			<Note on:remove={removeNote} noteData={note} />
+			<Note 
+				on:remove={removeNote} 
+				on:edit={editNote}
+				noteData={note} 
+			/>
 		{/each}
 		<br>
 		{#if opened}

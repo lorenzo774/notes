@@ -26,7 +26,7 @@
     <input bind:value={formNote.description} />
     <br>
     <div class="d-flex justify-content-around">
-        <button class="w-50 m-2 btn btn-primary" on:click={addNote}>Salva</button>
-        <button class="w-50 m-2 btn btn-primary" on:click={closeForm}>Annulla</button>
+        <button class="w-50 m-2 btn btn-primary" on:click={addNote}>Save</button>
+        <button class="w-50 m-2 btn btn-warning" on:click={closeForm}>Cancel</button>
     </div>
 </div>
