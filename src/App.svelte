@@ -61,7 +61,7 @@
 	<br>
 	<h1 class="text-center">Notes</h1>
 	<br>
-	<div class="list-group container w-50">
+	<div class="list-group container w-75 maxw-20em">
 		{#each notes as note}
 			<Note 
 				on:remove={removeNote} 
@@ -81,3 +81,9 @@
 		{/if}
 	</div>
 </main>
+
+<style>
+	.maxw-20em{
+		max-width: 50em;
+	}
+</style>
