@@ -4,7 +4,8 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "favicon.ico"
+      "src": "icons/favicon.png",
+      "sizes": "144x144"
     }
   ],
   "theme_color": "#1a1a1a",

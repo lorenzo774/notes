@@ -10,6 +10,13 @@
 	let opened: boolean;
 	let newNote: INote;
 
+	window.addEventListener('beforeinstallprompt', (e: any) => {
+    	console.log('ses');
+		
+		e.prompt();
+	});
+
+
 	// Helper
 	const getNoteIndex = function(id: number): number {
 		return notes.findIndex(n => n.id === id);
