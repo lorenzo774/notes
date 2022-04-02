@@ -105,6 +105,7 @@
 	}
 
 	.long-btn{
+		border-radius: 50%;
 		width: 2.5em;
 		height: 2.5em;
 		font-weight: bold;
