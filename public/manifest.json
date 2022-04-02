@@ -1,0 +1,14 @@
+{
+  "name": "Notes",
+  "short_name": "notes",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "favicon.ico"
+    }
+  ],
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
