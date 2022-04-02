@@ -59,7 +59,7 @@
 
 <main>
 	<br>
-	<h1 class="text-center">Notes</h1>
+	<h1 class="text-center fs-1">Notes</h1>
 	<br>
 	<div class="list-group container w-75 maxw-20em">
 		{#each notes as note}
@@ -77,7 +77,9 @@
 				on:closeForm={closeForm} 
 			/>
 		{:else}
-			<button class="btn btn-primary" on:click={() => opened = true}>Add</button>
+			<div class="bottom-right">
+				<button class="btn btn-primary long-btn btn-success" on:click={() => opened = true}>+</button>
+			</div>
 		{/if}
 	</div>
 </main>
@@ -85,5 +87,19 @@
 <style>
 	.maxw-20em{
 		max-width: 50em;
+	}
+
+	.bottom-right{
+		position: fixed;
+		right: 3em;
+		bottom: 3em;
+	}
+
+	.long-btn{
+		width: 2.5em;
+		height: 2.5em;
+		font-weight: bold;
+		font-size: 2em;
+		box-shadow: 2px 2px 1em black;
 	}
 </style>
