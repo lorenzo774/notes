@@ -54,7 +54,14 @@
 	<!-- CSS only -->
 	<link 
 		rel="stylesheet" 
-		href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" />
+		href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" 
+	/>
+	<link 
+		rel="stylesheet" 
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+		crossorigin="anonymous" 
+		referrerpolicy="no-referrer" 
+	/>
 </svelte:head>
 
 <main>
@@ -78,7 +85,9 @@
 			/>
 		{:else}
 			<div class="bottom-right">
-				<button class="btn btn-primary long-btn btn-success" on:click={() => opened = true}>+</button>
+				<button class="btn btn-primary long-btn btn-success" on:click={() => opened = true}>
+					<i class="fa-solid fa-plus"></i>
+				</button>
 			</div>
 		{/if}
 	</div>

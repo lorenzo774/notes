@@ -63,8 +63,12 @@
                 <p>{noteData.description}</p>
             </div>
             <div class="col-md-auto d-flex flex-column">
-                <button class="m-2 w-auto btn btn-secondary" on:click={edit}>Edit</button>
-                <button class="m-2 w-auto btn btn-danger" on:click={removeNote}>Remove</button>
+                <button class="m-2 w-auto btn btn-secondary" title="__Edit__" on:click={edit}>
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button class="m-2 w-auto btn btn-danger" title="__Remove__" on:click={removeNote}>
+                    <i class="fa-solid fa-trash"></i>
+                </button>
             </div>
         </div>
     </div>
